@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import supabase from "../utils/supabase";
 import type { User } from "@supabase/supabase-js";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 
 export const Route = createFileRoute("/")({
 	component: Index,
@@ -37,10 +37,10 @@ function Index() {
 	if (loading) {
 		return (
 			<>
-				<Helmet>
+				{/* <Helmet>
 					<title>로딩 중... - 커뮤니티</title>
 					<meta name="description" content="로딩 중 페이지 입니다." />
-				</Helmet>
+				</Helmet> */}
 				<div className="flex items-center justify-center min-h-screen">
 					<div className="text-lg">로딩 중...</div>
 				</div>
@@ -50,7 +50,7 @@ function Index() {
 
 	return (
 		<>
-			<Helmet>
+			{/* <Helmet>
 				<title>
 					{user && user?.email
 						? `${user.email}로 로그인 된 화면`
@@ -60,7 +60,7 @@ function Index() {
 					name="description"
 					content={`${user && user?.email ? `${user?.email}로 로그인 완료 페이지의 description` : "로그인 하지 않은 페이지의 description "}`}
 				/>
-			</Helmet>
+			</Helmet> */}
 			<div className="container mx-auto px-4 py-8">
 				<div className="max-w-4xl mx-auto">
 					{user ? (
