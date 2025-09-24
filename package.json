@@ -18,6 +18,9 @@
 			"/",
 			"/login"
 		],
+		"exclude": [
+			"/404.html"
+		],
 		"puppeteerArgs": [
 			"--no-sandbox",
 			"--disable-setuid-sandbox",
