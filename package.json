@@ -20,10 +20,17 @@
 		],
 		"puppeteerArgs": [
 			"--no-sandbox",
-			"--disable-setuid-sandbox"
+			"--disable-setuid-sandbox",
+			"--disable-web-security",
+			"--disable-features=VizDisplayCompositor"
 		],
+		"puppeteerExecutablePath": null,
 		"waitFor": 2000,
-		"minifyHtml": false
+		"minifyHtml": false,
+		"skipThirdPartyRequests": true,
+		"removeBlobs": true,
+		"fixWebpackChunksIssue": false,
+		"asyncScriptTags": true
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.1",
