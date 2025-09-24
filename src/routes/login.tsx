@@ -57,18 +57,46 @@ function Login() {
 	return (
 		<>
 			<Helmet>
-				<title>로그인 페이지</title>
+				<title>로그인 - 커뮤니티</title>
 				<meta
 					name="description"
-					content="로그인을 해서 커뮤니티에 참여하세요"
+					content="커뮤니티에 로그인하여 다양한 기능을 이용해보세요. 이메일과 비밀번호로 간편하게 로그인할 수 있습니다."
 				/>
+				<meta
+					name="keywords"
+					content="로그인, 커뮤니티, 회원가입, 이메일 로그인"
+				/>
+
+				{/* Open Graph */}
+				<meta property="og:title" content="커뮤니티 로그인" />
+				<meta
+					property="og:description"
+					content="로그인하여 커뮤니티에 참여하세요"
+				/>
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:url"
+					content="https://yourdomain.com/login"
+				/>
+
+				{/* Twitter Card */}
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content="커뮤니티 로그인" />
+				<meta
+					name="twitter:description"
+					content="로그인하여 커뮤니티에 참여하세요"
+				/>
+
+				{/* Canonical URL */}
+				<link rel="canonical" href="https://yourdomain.com/login" />
 			</Helmet>
+
 			<div className="w-[50vw] min-h-screen flex items-center justify-center bg-gray-50">
 				<div className="max-w-md w-full space-y-8 px-4">
 					<div>
-						<h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+						<h1 className="mt-6 text-center text-3xl font-bold text-gray-900">
 							로그인
-						</h2>
+						</h1>
 						<p className="mt-2 text-center text-sm text-gray-600">
 							계정에 로그인하세요
 						</p>
@@ -84,7 +112,7 @@ function Login() {
 								type="email"
 								label="이메일"
 								placeholder="이메일을 입력하세요"
-								error={errors.email?.message}
+								error={errors.email && errors.email.message}
 								disabled={isLoading}
 							/>
 
@@ -93,7 +121,9 @@ function Login() {
 								type="password"
 								label="비밀번호"
 								placeholder="비밀번호를 입력하세요"
-								error={errors.password?.message}
+								error={
+									errors.password && errors.password.message
+								}
 								disabled={isLoading}
 							/>
 						</div>

@@ -52,13 +52,13 @@ function Index() {
 		<>
 			<Helmet>
 				<title>
-					{user?.email
-						? `${user?.email}로 로그인 된 화면`
+					{user && user?.email
+						? `${user.email}로 로그인 된 화면`
 						: "로그인 되지 않은 화면"}
 				</title>
 				<meta
 					name="description"
-					content={`${user?.email ? `${user?.email}로 로그인 완료 페이지의 description` : "로그인 하지 않은 페이지의 description "}`}
+					content={`${user && user?.email ? `${user?.email}로 로그인 완료 페이지의 description` : "로그인 하지 않은 페이지의 description "}`}
 				/>
 			</Helmet>
 			<div className="container mx-auto px-4 py-8">
